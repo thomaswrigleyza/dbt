@@ -39,4 +39,8 @@ models:
   jaffle_shop:
     +project: 'utility-replica-441110-u8'
     +schema: 'dbt_tutorial_jaffle_shop'
+<<<<<<< HEAD
     +materialized: table
+=======
+    +materialized: table
+>>>>>>> 66eae367acc2babf955c2922c72380839bde7c43
