@@ -1,0 +1,1 @@
+select * from `utility-replica-441110-u8`.dbt_tutorial_jaffle_shop.customers
