@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'jaffle_shop'
+name: 'data_science_portfolio'
 version: '1.0.0'
 config-version: 2
 
@@ -36,10 +36,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  jaffle_shop:
+  data_science_portfolio:
     +project: 'utility-replica-441110-u8'
-    +schema: 'dbt_tutorial_jaffle_shop'
-    staging:
+    port_proj1_hex7_data:
+    +schema: 'port_proj1_hex7_data'
+    src:
       +materialized: view
-    marts:
+    stg:
+      +materialized: table
+    mart:
       +materialized: table
