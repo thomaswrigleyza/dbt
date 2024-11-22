@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_proj1_hex7_with_sic7
+    description: |
+      This staging model enriches hex7 data with industry descriptions (SIC7 codes)
+      and aggregates FTE values by hex7 and SIC7_1d level.
+    columns:
+      - name: hex7
+        description: H3 hexagonal index.
+      - name: industry_description
+        description: Industry description at SIC7_1d level.
+      - name: total_FTE
+        description: Total Full-Time Equivalent employees aggregated by SIC7_1d and hex7.
