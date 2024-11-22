@@ -39,4 +39,7 @@ models:
   jaffle_shop:
     +project: 'utility-replica-441110-u8'
     +schema: 'dbt_tutorial_jaffle_shop'
-    +materialized: table
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
