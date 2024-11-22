@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: port_proj1_hex7_data
+    tables:
+      - name: src_1_hex7_FTE_Industry5d_with_lat_long
+      - name: src_1_sic7codes
+      - name: src_1_National_FTE_WageBand_Industry5d
+      - name: src_1_National_MedianIncome_Industry5d
