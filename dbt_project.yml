@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'data_science_portfolio'
+name: 'insightsengine'
 version: '1.0.0'
 config-version: 2
 
@@ -36,13 +36,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  data_science_portfolio:
+  insightsengine:
     +project: 'utility-replica-441110-u8'
-    port_proj1_hex7_data:
-    +schema: 'port_proj1_hex7_data'
     src:
-      +materialized: view
+      +materialized: table
+      proj1:
+        +materialized: table
     stg:
+      +materialized: view
+      proj1:
+        +materialized: view
+    marts:
       +materialized: table
-    mart:
-      +materialized: table
+      proj1:
+        +materialized: table

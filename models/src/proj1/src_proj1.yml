@@ -7,3 +7,17 @@ sources:
       - name: src_1_sic7codes
       - name: src_1_National_FTE_WageBand_Industry5d
       - name: src_1_National_MedianIncome_Industry5d
+  
+  - name: openweather_data
+    description: "Source data from the OpenWeather API."
+    tables:
+      - name: src_openweather_aqi
+        description: "Raw air quality data."
+        freshness:
+          warn_after: { count: 1, period: day }
+          error_after: { count: 2, period: day }
+        tests:
+          - not_null:
+              column_name: city
+          - not_null:
+              column_name: timestamp
