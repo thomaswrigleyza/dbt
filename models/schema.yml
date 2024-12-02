@@ -1,41 +1,26 @@
 version: 2
 
 models:
-  - name: customers
-    description: One record per customer
+  - name: stg_openweather_values
+    description: "Transforms pollutant data to have one row per city per timestamp, with pollutants as columns."
     columns:
-      - name: customer_id
-        description: Primary key
-        tests:
-          - unique
-          - not_null
-      - name: first_order_date
-        description: NULL when a customer has not yet placed an order.
-
-  - name: stg_customers
-    description: This model cleans up customer data
-    columns:
-      - name: customer_id
-        description: Primary key
-        tests:
-          - unique
-          - not_null
-
-  - name: stg_orders
-    description: This model cleans up order data
-    columns:
-      - name: order_id
-        description: Primary key
-        tests:
-          - unique
-          - not_null
-      - name: status
-        tests:
-          - accepted_values:
-              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
-      - name: customer_id
+      - name: city
+        description: "The city where the air quality was measured."
         tests:
           - not_null
-          - relationships:
-              to: ref('stg_customers')
-              field: customer_id
+      - name: timestamp
+        description: "The timestamp of the air quality measurement."
+        tests:
+          - not_null
+      - name: pm2_5
+        description: "Particulate matter 2.5 levels."
+      - name: pm10
+        description: "Particulate matter 10 levels."
+      - name: no2
+        description: "Nitrogen dioxide levels."
+      - name: so2
+        description: "Sulfur dioxide levels."
+      - name: o3
+        description: "Ozone levels."
+      - name: co
+        description: "Carbon monoxide levels."
